@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="NG-view2.js"></script>
+    <link rel="stylesheet" href="stylesheet-view2.css">
+    <title>newProject</title>
+</head>
+<body ng-app="newApp">
+<div ng-controller="appCtrl">
+    <table border="1px" width="100%">
+        <tr>
+            <th ng-click="changeOrder('name')">Name</th>
+            <th ng-click="changeOrder('country')">Country</th>
+        </tr>
+        <tr ng-repeat="x in names | orderBy:orderByMe">
+            <td>{{x.name}}</td>
+            <td>{{x.country}}</td>
+        </tr>
+    </table>
+</div>
+<!--if you wanna change your text after a while yu must use $timeout in your controller-->
+<div ng-controller="timeOut">
+    <p style="text-decoration: double">{{wm}}</p>
+</div>
+
+<div ng-controller="interval">
+    <h1>{{time}}</h1>
+</div>
+
+</body>
+</html>

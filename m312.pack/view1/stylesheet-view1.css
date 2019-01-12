@@ -1,0 +1,18 @@
+table {
+    border: 1px;
+    border-style: inset;
+    border-radius: 12px;
+    border-color: aqua;
+}
+
+th {
+    border: 1px;
+    border-color: aqua;
+    border-style: inset;
+}
+
+td {
+    border: 1px;
+    border-color: aqua;
+    border-style: inset;
+}

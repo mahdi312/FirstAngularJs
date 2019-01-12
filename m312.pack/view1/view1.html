@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!--    this .js file use for sanitizing amd entering another html into our page-->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script>
+    <script src="NG-view1.js"></script>
+    <link rel="stylesheet" href="stylesheet-view1.css">
+    <title>newProject</title>
+</head>
+<!--    when we wanna orderby our choices we act like this:-->
+<body ng-app="newApp">
+<div ng-controller="appCtrl">
+    <table border="1px" width="100%">
+        <tr>
+            <th ng-click="changeOrder('name')">Name</th>
+            <th ng-click="changeOrder('country')">Country</th>
+        </tr>
+        <tr ng-repeat="x in names | orderBy:orderByMe ">
+            <td>{{x.name}}</td>
+            <td>{{x.country}}</td>
+        </tr>
+    </table>
+</div>
+
+<div ng-controller="locationURL">
+    <p>{{myURL}}</p>
+    <p>{{myPath}}</p>
+    <p>{{myProtocol}}</p>
+    <p>{{url}}</p>
+    <p>{{port}}</p>
+    <p>{{host}}</p>
+</div>
+<!--    inner Html binded in my page-->
+<div ng-controller="makeResponse">
+    <p ng-bind-html="myData"></p>
+</div>
+</body>
+</html>
